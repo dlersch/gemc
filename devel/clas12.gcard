@@ -1,0 +1,117 @@
+<gcard>
+<option name="geometry" value="1400x1200"/>
+
+<!-- target. Notice variation give the target type. Can be: lH2, lD2, ND3 -->
+<!--
+<detector name="/group/clas12/experimentsd/clas12/targets/target" factory="TEXT" variation="lH2"/>
+-->
+
+<!-- The java variation of various detectors come from the coatjava factories
+The "original" variation is still available if needed -->
+
+
+<!-- central detectors -->
+<detector name="/group/clas12/gemc/3a.0.0/experiments/clas12/bst/bst"               factory="TEXT" variation="java"/>
+<detector name="/group/clas12/gemc/3a.0.0/experiments/clas12/cnd/cnd"               factory="TEXT" variation="original"/>
+<detector name="/group/clas12/gemc/3a.0.0/experiments/clas12/micromegas/micromegas" factory="TEXT" variation="original"/>
+
+<!--	ctof, original volumes
+<detector name="/group/clas12/gemc/3a.0.0/experiments/clas12/ctof/ctof"             factory="TEXT" variation="original"/>
+-->
+
+<!--	ctof, cad volumes	-->
+<detector name="/group/clas12/gemc/3a.0.0/experiments/clas12/ctof/ctof"             factory="TEXT" variation="cad"/>
+<detector name="/group/clas12/gemc/3a.0.0/experiments/clas12/ctof/cad/"             factory="CAD"/>
+
+<detector name="/group/clas12/gemc/3a.0.0/experiments/clas12/htcc/htcc"          factory="TEXT" variation="original"/>
+
+<!-- magnets volumes-->
+<detector name="/group/clas12/gemc/3a.0.0/experiments/clas12/magnets/solenoid"      factory="TEXT" variation="original"/>
+<detector name="/group/clas12/gemc/3a.0.0/experiments/clas12/magnets/torus"         factory="TEXT" variation="original"/>
+
+<!-- Beamline configuration: FT is used -->
+<detector name="/group/clas12/gemc/3a.0.0/experiments/clas12/beamline/beamline" factory="TEXT" variation="FTOn"/>
+<detector name="/group/clas12/gemc/3a.0.0/experiments/clas12/ft/ft"             factory="TEXT" variation="FTOn"/>
+
+<!-- Beamline configuration: FT is present but it is not used
+<detector name="/group/clas12/gemc/3a.0.0/experiments/clas12/beamline/beamline" factory="TEXT" variation="FTOff"/>
+<detector name="/group/clas12/gemc/3a.0.0/experiments/clas12/clas12/ft/ft"             factory="TEXT" variation="FTOff"/>
+-->
+
+
+<!-- forward carriage -->
+<detector name="/group/clas12/gemc/3a.0.0/experiments/clas12/fc/forwardCarriage" factory="TEXT" variation="original"/>
+
+
+
+
+<detector name="/group/clas12/gemc/3a.0.0/experiments/clas12/dc/dc" factory="TEXT" variation="java"/>
+
+
+<!--
+<detector name="/group/clas12/gemc/3a.0.0/experiments/clas12/ftof/ftof"          factory="TEXT" variation="java"/>
+-->
+
+<detector name="/group/clas12/gemc/3a.0.0/experiments/clas12/ec/ec"              factory="TEXT" variation="java"/>
+<detector name="/group/clas12/gemc/3a.0.0/experiments/clas12/pcal/pcal"          factory="TEXT" variation="java"/>
+
+
+<option name="SCALE_FIELD" value="clas12-torus-big, -1"/>
+
+
+<!-- hall field  -->
+<!--
+<option name="HALL_FIELD"  value="clas12-solenoid"/>
+<option name="SCALE_FIELD" value="clas12-solenoid,1"/>
+-->
+
+<!-- fields, precise mode -->
+<option name="FIELD_PROPERTIES" value="clas12-torus-big, 2*mm, G4ClassicalRK4, linear"/>
+<option name="FIELD_PROPERTIES" value="clas12-solenoid, 0.5*mm, G4HelixSimpleRunge, linear"/>
+
+<!-- fields, fast mode
+<option name="FIELD_PROPERTIES" value="clas12-torus-big, 10*mm, G4HelixSimpleRunge, linear"/>
+<option name="FIELD_PROPERTIES" value="clas12-solenoid,  2*mm, G4HelixSimpleRunge, linear"/>
+-->
+
+<option name="BEAM_P"   value="e-, 5.0*GeV, 30.0*deg, 0.0*deg"/>
+
+<option name="SPREAD_P"   value="e-, 0.0*GeV, 0.0*deg, 0.0*deg"/>
+
+<option name="POLAR"    value="0, 0*deg, 0.deg"/>
+
+<option name="INTEGRATEDRAW" value="bst, ctof, htcc, ft_cal, ft_hodo, dc, ec, pcal"/>
+
+<option name="SAVE_ALL_MOTHERS" value="2"/>
+
+<option name="PHYSICS" value="STD"/>
+
+<option name="OUTPUT"   value="evio, output_phi120_testcalctime_smeared.ev"/>
+
+<!--  Will print message every 10 events -->
+<option name="PRINT_EVENT"    value="100" />
+
+
+<!--  Existance, Displacement and tilts: Uncomment and edit the code below
+to set existance, shift or tilt individual volumes -->
+
+<detector name="ftof">
+<existence exist="no" />
+</detector>
+
+
+<!--
+
+<detector name="ec_s1">
+<existence exist="no" />
+</detector>
+
+<detector name="ec_s3">
+<position x="0*cm"  y="0*cm"  z="200*cm"  />
+<rotation x="0*deg"  y="0*deg"  z="20*deg"  />
+</detector>
+-->
+
+
+
+</gcard>
